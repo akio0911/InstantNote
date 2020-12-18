@@ -1,0 +1,24 @@
+
+/* Class = "UIBarButtonItem"; title = "trash"; ObjectID = "BFw-qG-YBU"; */
+"BFw-qG-YBU.title" = "trash";
+
+/* Class = "UIBarButtonItem"; title = "paste"; ObjectID = "NV5-p7-ehd"; */
+"NV5-p7-ehd.title" = "paste";
+
+/* Class = "UIBarButtonItem"; title = "bigger"; ObjectID = "O9K-5q-ipL"; */
+"O9K-5q-ipL.title" = "bigger";
+
+/* Class = "UIBarButtonItem"; title = "smaller"; ObjectID = "Qkg-f6-rJU"; */
+"Qkg-f6-rJU.title" = "smaller";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo"; ObjectID = "hJV-ik-1z8"; */
+"hJV-ik-1z8.text" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo";
+
+/* Class = "UIBarButtonItem"; title = "info"; ObjectID = "lRP-8c-fbQ"; */
+"lRP-8c-fbQ.title" = "info";
+
+/* Class = "UIBarButtonItem"; title = "undo"; ObjectID = "uL5-Rm-lCL"; */
+"uL5-Rm-lCL.title" = "undo";
+
+/* Class = "UIBarButtonItem"; title = "copy"; ObjectID = "uZA-N5-Ktn"; */
+"uZA-N5-Ktn.title" = "copy";

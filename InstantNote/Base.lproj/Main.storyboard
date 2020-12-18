@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="textViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="InstantNote" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v23-eP-qX3">
+                                <rect key="frame" x="10" y="44" width="394" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="2xT-gX-5Mb"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="info" image="info" id="lRP-8c-fbQ">
+                                        <connections>
+                                            <action selector="tapInfoButton:" destination="BYZ-38-t0r" id="r5H-4r-zVm"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="iJo-Kz-Upf"/>
+                                    <barButtonItem title="smaller" style="plain" id="Qkg-f6-rJU">
+                                        <imageReference key="image" image="smaller" symbolScale="large"/>
+                                        <connections>
+                                            <action selector="smaller:" destination="BYZ-38-t0r" id="f4J-Rn-VIt"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="1Fm-5K-EFv"/>
+                                    <barButtonItem title="bigger" image="larger" style="plain" id="O9K-5q-ipL">
+                                        <connections>
+                                            <action selector="bigger:" destination="BYZ-38-t0r" id="aOa-oF-bMx"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="aF8-JU-aHC"/>
+                                    <barButtonItem title="undo" image="undo" style="plain" id="uL5-Rm-lCL">
+                                        <connections>
+                                            <action selector="undo:" destination="BYZ-38-t0r" id="BdE-4X-opt"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="8rx-yr-IQd"/>
+                                    <barButtonItem title="redo" image="redo" id="7wF-Fb-M9b">
+                                        <connections>
+                                            <action selector="redo" destination="BYZ-38-t0r" id="lRy-Lt-AAw"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="nuh-a0-1tw"/>
+                                    <barButtonItem title="trash" image="trash" style="plain" id="BFw-qG-YBU">
+                                        <connections>
+                                            <action selector="moveToTrash:" destination="BYZ-38-t0r" id="8cE-U5-bCl"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="kGS-gM-KV6"/>
+                                    <barButtonItem title="paste" image="paste" style="plain" id="NV5-p7-ehd">
+                                        <connections>
+                                            <action selector="pasteText:" destination="BYZ-38-t0r" id="6Dg-Y9-Hs4"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="1Du-bX-Iwy"/>
+                                    <barButtonItem title="copy" image="copy" style="plain" id="uZA-N5-Ktn">
+                                        <connections>
+                                            <action selector="copyText:" destination="BYZ-38-t0r" id="TyR-kx-C1a"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" textAlignment="natural" id="hJV-ik-1z8">
+                                <rect key="frame" x="33" y="89" width="349" height="773"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="v23-eP-qX3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="GPo-mb-bgV"/>
+                            <constraint firstItem="v23-eP-qX3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="O48-vR-DFc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="v23-eP-qX3" secondAttribute="trailing" constant="10" id="f00-tW-HQp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="hJV-ik-1z8" id="Fgc-Cz-d2i"/>
+                        <outlet property="toolbar" destination="v23-eP-qX3" id="J18-Tf-4rp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="272.46376811594206" y="-14.0625"/>
+        </scene>
+        <!--Info View Controller-->
+        <scene sceneID="mCQ-rl-UH2">
+            <objects>
+                <viewController storyboardIdentifier="info-modal" id="HMx-lG-MqW" customClass="InfoViewController" customModule="InstantNote" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RU1-1r-BLi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="cYg-n7-7nA"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9ho-oo-cOE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1182.608695652174" y="0.6696428571428571"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="copy" width="23.333333969116211" height="27.666666030883789"/>
+        <image name="info" width="23.333333969116211" height="27.666666030883789"/>
+        <image name="larger" width="23.333333969116211" height="27.666666030883789"/>
+        <image name="paste" width="23.333333969116211" height="27.666666030883789"/>
+        <image name="redo" width="23.333333969116211" height="27.666666030883789"/>
+        <image name="smaller" width="23.333333969116211" height="27.666666030883789"/>
+        <image name="trash" width="23.333333969116211" height="27.666666030883789"/>
+        <image name="undo" width="23.333333969116211" height="27.666666030883789"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
