@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  EditorViewController.swift
 //  InstantNote
 //
 //  Created by Shotaro Maruyama on 2020/11/19.
@@ -21,12 +21,14 @@ import AppTrackingTransparency
  
  */
 
-class ViewController: UIViewController,UIViewControllerTransitioningDelegate, GADBannerViewDelegate,MFMailComposeViewControllerDelegate {
+class EditorViewController: UIViewController,UIViewControllerTransitioningDelegate, GADBannerViewDelegate,MFMailComposeViewControllerDelegate {
     @IBOutlet weak var toolbar: UIToolbar!
     @IBOutlet weak var textView: UITextView! {
         didSet { textView.delegate = self }
     }
-    private var oldText:String = ""
+    
+    private let viewModel = EditorViewModel()
+    
     private let textViewUndoManager = UndoManager()
     
     private var banner = GADBannerView()
@@ -289,7 +291,7 @@ class ViewController: UIViewController,UIViewControllerTransitioningDelegate, GA
     
     @IBAction private func moveToTrash(_ sender: Any) {
         if(textView.text!.isEmpty == false){
-            registerUndo(text: oldText)
+            registerUndo(text: viewModel.oldText)
             textView.text? = ""
         }
     }
@@ -297,14 +299,14 @@ class ViewController: UIViewController,UIViewControllerTransitioningDelegate, GA
     @IBAction private func undo(_ sender: Any) {
         if(textViewUndoManager.canUndo){
             textViewUndoManager.undo()
-            oldText = textView.text
+            viewModel.oldText = textView.text
         }
     }
     
     @IBAction private func redo() {
         if(textViewUndoManager.canRedo){
             textViewUndoManager.redo()
-            oldText = textView.text
+            viewModel.oldText = textView.text
         }
     }
 
@@ -374,11 +376,11 @@ extension UITextView {
     }
 }
 
-extension ViewController: UITextViewDelegate{
+extension EditorViewController: UITextViewDelegate{
     func textViewDidChange(_ textView: UITextView) {
         if (textView.markedTextRange == nil) {
-            registerUndo(text: oldText)
-            oldText = textView.text
+            registerUndo(text: viewModel.oldText)
+            viewModel.oldText = textView.text
         }
     }
 }
@@ -417,7 +419,7 @@ extension UIView {
 }
 
 
-extension ViewController: infoMethodDelegate {
+extension EditorViewController: infoMethodDelegate {
     func sendMail() {
         //メールを送信できるかチェック
         if MFMailComposeViewController.canSendMail()==false {
