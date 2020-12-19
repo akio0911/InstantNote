@@ -9,4 +9,5 @@ import Foundation
 
 final class EditorViewModel {
     var oldText:String = ""
+    let textViewUndoManager = UndoManager()
 }

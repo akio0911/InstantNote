@@ -29,8 +29,6 @@ class EditorViewController: UIViewController,UIViewControllerTransitioningDelega
     
     private let viewModel = EditorViewModel()
     
-    private let textViewUndoManager = UndoManager()
-    
     private var banner = GADBannerView()
     private var isPurchasedInValidAd:Bool{
         get{
@@ -297,22 +295,22 @@ class EditorViewController: UIViewController,UIViewControllerTransitioningDelega
     }
     
     @IBAction private func undo(_ sender: Any) {
-        if(textViewUndoManager.canUndo){
-            textViewUndoManager.undo()
+        if(viewModel.textViewUndoManager.canUndo){
+            viewModel.textViewUndoManager.undo()
             viewModel.oldText = textView.text
         }
     }
     
     @IBAction private func redo() {
-        if(textViewUndoManager.canRedo){
-            textViewUndoManager.redo()
+        if(viewModel.textViewUndoManager.canRedo){
+            viewModel.textViewUndoManager.redo()
             viewModel.oldText = textView.text
         }
     }
 
     private func registerUndo(text: String) {
-        if (textViewUndoManager.isUndoRegistrationEnabled) {
-            textViewUndoManager.registerUndo(withTarget: self, handler: { _ in
+        if (viewModel.textViewUndoManager.isUndoRegistrationEnabled) {
+            viewModel.textViewUndoManager.registerUndo(withTarget: self, handler: { _ in
                 if let currentText = self.textView.text { self.registerUndo(text: currentText) }
                 self.textView.text = text
             })
