@@ -30,11 +30,6 @@ class EditorViewController: UIViewController,UIViewControllerTransitioningDelega
     private let viewModel = EditorViewModel()
     
     private var banner = GADBannerView()
-    private var isPurchasedInValidAd:Bool{
-        get{
-            return userDefaults.bool(forKey: "isPurchasedInValidAd")
-        }
-    }
     
     private var isReceivedAd = false
     
@@ -53,11 +48,9 @@ class EditorViewController: UIViewController,UIViewControllerTransitioningDelega
         )
     }
     
-    private let userDefaults = UserDefaults()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        userDefaults.register(defaults: ["isPurchasedInValidAd":false])
+        viewModel.userDefaults.register(defaults: ["isPurchasedInValidAd":false])
         banner.delegate = self
         // Do any additional setup after loading the view.
         self.toolbar.tintColor = UIColor.systemBlue
@@ -89,7 +82,7 @@ class EditorViewController: UIViewController,UIViewControllerTransitioningDelega
         // textViewのキーボードにツールバーを設定
         textView.inputAccessoryView = doneButtonBar
         
-        if(isPurchasedInValidAd == false){
+        if(viewModel.isPurchasedInValidAd == false){
             requestAd()
         }
         
