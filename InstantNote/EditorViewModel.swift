@@ -19,4 +19,6 @@ final class EditorViewModel {
     }
     
     let userDefaults = UserDefaults()
+    
+    var isReceivedAd = false
 }

@@ -31,12 +31,9 @@ class EditorViewController: UIViewController,UIViewControllerTransitioningDelega
     
     private var banner = GADBannerView()
     
-    private var isReceivedAd = false
-    
-    
     private var textViewFrame:CGRect {
         var height:CGFloat = 0
-        if(isReceivedAd){
+        if(viewModel.isReceivedAd){
             height = self.view.frame.size.height - self.toolbar.frame.maxY - self.view.safeAreaInsets.bottom - banner.frame.size.height
         }else{
             height = self.view.frame.size.height - self.toolbar.frame.maxY - self.view.safeAreaInsets.bottom
@@ -134,10 +131,10 @@ class EditorViewController: UIViewController,UIViewControllerTransitioningDelega
     }
     
     func adViewDidReceiveAd(_ bannerView: GADBannerView) {
-        if(isReceivedAd == false){
+        if(viewModel.isReceivedAd == false){
             view.addSubview(banner)
             banner.frame.origin.y = toolbar.frame.maxY
-            isReceivedAd = true
+            viewModel.isReceivedAd = true
             adjustTextViewFrameForAdSize()
         }
     }
